@@ -11,7 +11,7 @@
 FROM python:3.12-slim
 WORKDIR /app
 # Installe tout en root, conserve cache apt/pip
-COPY . /app
-RUN pip install -r requirements.txt
-EXPOSE 4000
+COPY main.py
+RUN pip install -r requirements.txt .
+EXPOSE 100
 CMD ["python", "main.py"]
